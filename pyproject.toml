@@ -20,7 +20,6 @@ langchain-openai = "^0.3.33"
 langchain-deepseek = "^0.1.4"
 langchain-community = "^0.3.29"
 langchain-elasticsearch = "^0.3.2"
-langchain-pinecone = "^0.2.12"
 langchain-redis = "^0.2.3"
 
 [tool.poetry.group.dev.dependencies]

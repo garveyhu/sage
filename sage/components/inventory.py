@@ -5,7 +5,6 @@ from sage.components.manager.redis import RedisManager
 from sage.components.memory.elasticsearch import ElasticsearchMemory
 from sage.components.memory.redis import RedisMemory
 from sage.components.vector.elasticsearch import ElasticsearchVector
-from sage.components.vector.pinecone import PineconeVector
 
 
 """⭐llm⭐"""
@@ -154,16 +153,3 @@ def es_resource_vector():
             db.client.indices.refresh(index=ElasticsearchVector.resource_index())
     """
     return ElasticsearchVector().resource_vector()
-
-
-def pinecone_vector():
-    """Pinecone存储向量（向量化）.
-
-    Example:
-        .. code-block:: python
-
-            db = pinecone_vector()
-            db.add_documents(content)
-    """
-
-    return PineconeVector().pinecone_vector()

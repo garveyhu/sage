@@ -2,7 +2,8 @@ from langchain.memory import ConversationBufferWindowMemory, ConversationSummary
 from langchain_elasticsearch.chat_history import ElasticsearchChatMessageHistory
 
 from sage.complex.config.inventory import dialog_id
-from sage.components.inventory import elasticsearch, llm
+from sage.components.llms.llm_factory import LLMFactory
+from sage.components.manager.elasticsearch import ElasticsearchManager
 
 
 class ElasticsearchMemory:
@@ -10,7 +11,7 @@ class ElasticsearchMemory:
 
     def __init__(self):
         self.history = ElasticsearchChatMessageHistory(
-            es_connection=elasticsearch(),
+            es_connection=ElasticsearchManager().client,
             index="chat_history",
             session_id=dialog_id(),
         )
@@ -18,7 +19,7 @@ class ElasticsearchMemory:
     def summarize_memory(self, **kwargs):
         """对历史进行LLM总结，生成新的历史上下文."""
         return ConversationSummaryMemory.from_messages(
-            llm=llm(),
+            llm=LLMFactory.create_llm(),
             chat_memory=self.history,
             return_messages=True,
             **kwargs,

@@ -12,9 +12,6 @@
     },
     "qwen": {
       "QWEN_API_KEY": "your-qwen-api-key"
-    },
-    "pinecone": {
-      "PINECONE_API_KEY": "your-pinecone-api-key"
     }
   },
   "models": {

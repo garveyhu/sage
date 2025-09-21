@@ -1,15 +1,16 @@
 from langchain_elasticsearch import ElasticsearchStore
 
 from sage.complex.config.inventory import dialog_id
-from sage.components.inventory import elasticsearch, embedding
+from sage.components.embeddings.embedding_factory import EmbeddingFactory
+from sage.components.manager.elasticsearch import ElasticsearchManager
 
 
 class ElasticsearchVector:
     """Elasticsearch存储向量（向量化）."""
 
     def __init__(self):
-        self.client = elasticsearch()
-        self.embedding = embedding()
+        self.client = ElasticsearchManager().client
+        self.embedding = EmbeddingFactory.create_embedding()
 
     def dialog_vector(self):
         """会话向量Store"""
