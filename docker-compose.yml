@@ -1,0 +1,13 @@
+services:
+  sage:
+    image: archeruu/python-poetry:3.10
+    container_name: sage
+    network_mode: host
+    ports:
+      - "8000:8000"
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - .:/apps/sage
+    working_dir: /apps/sage
+    command: ./run.sh

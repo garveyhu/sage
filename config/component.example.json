@@ -1,0 +1,30 @@
+{
+  "elasticsearch": {
+    "type": "cloud",
+    "host": {
+      "url": "http://your-elasticsearch-host:9200",
+      "username": "your-username",
+      "password": "your-password"
+    },
+    "cloud": {
+      "url": "https://your-elasticsearch-project.es.region.cloud.elastic.cloud:443",
+      "api_key": "your-elasticsearch-api-key"
+    }
+  },
+  "mysql": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "db": "langchain",
+    "user": "root",
+    "password": "your-mysql-password"
+  },
+  "redis": {
+    "host": "your-redis-host",
+    "port": 6379,
+    "db": 0,
+    "password": "your-redis-password",
+    "socket_timeout": 0.5,
+    "sentinel_master": "",
+    "sentinel_password": ""
+  }
+}

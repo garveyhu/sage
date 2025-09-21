@@ -1,0 +1,95 @@
+{
+  "cases": {
+    "llm": "qwen-plus",
+    "embedding": "text-embedding-v4"
+  },
+  "keys": {
+    "openai": {
+      "OPENAI_API_KEY": "your-openai-api-key"
+    },
+    "deepseek": {
+      "DEEPSEEK_API_KEY": "your-deepseek-api-key"
+    },
+    "qwen": {
+      "QWEN_API_KEY": "your-qwen-api-key"
+    },
+    "pinecone": {
+      "PINECONE_API_KEY": "your-pinecone-api-key"
+    }
+  },
+  "models": {
+    "llm": [
+      {
+        "name": "gpt-5",
+        "type": "openai",
+        "token": "400k",
+        "temperature": 0.5
+      },
+      {
+        "name": "gpt-5-mini",
+        "type": "openai",
+        "token": "400k",
+        "temperature": 0.5
+      },
+      {
+        "name": "gpt-5-nano",
+        "type": "openai",
+        "token": "400k",
+        "temperature": 0.5
+      },
+      {
+        "name": "deepseek-chat",
+        "type": "deepseek",
+        "token": "128k",
+        "temperature": 1.3
+      },
+      {
+        "name": "deepseek-reasoner",
+        "type": "deepseek",
+        "token": "128k",
+        "temperature": 1.3
+      },
+      {
+        "name": "qwen3-max-preview",
+        "type": "qwen",
+        "token": "252k",
+        "temperature": 1.0
+      },
+      {
+        "name": "qwen-plus",
+        "type": "qwen",
+        "token": "1M",
+        "temperature": 1.0
+      },
+      {
+        "name": "qwen-flash",
+        "type": "qwen",
+        "token": "1M",
+        "temperature": 1.0
+      }
+    ],
+    "embedding": [
+      {
+        "name": "text-embedding-3-large",
+        "type": "openai",
+        "token": "8k",
+        "dimensions": 3072
+      },
+      {
+        "name": "text-embedding-3-small",
+        "type": "openai",
+        "token": "8k",
+        "dimensions": 1536
+      },
+      {
+        "name": "text-embedding-v4",
+        "type": "qwen",
+        "token": "8k",
+        "dimensions": 1024
+      }
+    ],
+    "audio": [],
+    "video": [],
+    "image": []
+  }
+}
