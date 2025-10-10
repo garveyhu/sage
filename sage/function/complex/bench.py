@@ -4,6 +4,6 @@ from loguru import logger
 from sage.components.inventory import llm
 
 chain = llm() | StrOutputParser()
-response = chain.invoke("杭州明天的天气怎么样？")
+response = chain.invoke("介绍一下塞尔达传说旷野之息")
 
 logger.info(response)
