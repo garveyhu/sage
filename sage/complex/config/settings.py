@@ -1,4 +1,5 @@
 from .base_settings import CONFIG_PATH, BaseSettings
+from dotenv import load_dotenv
 
 
 class URLSettings(BaseSettings):
@@ -53,6 +54,7 @@ class USERSettings(BaseSettings):
         self.data = self.from_json(self.USER_PATH).data
 
 
+load_dotenv(CONFIG_PATH / ".env")
 url_settings = URLSettings()
 model_settings = MODELSettings()
 component_settings = COMPONENTSettings()
